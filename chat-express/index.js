@@ -18,10 +18,11 @@ app.get('/', (req, res) => {
     res.sendStatus(203);
 });
 
+app.use(express.static('public'));
+
 const server = app.listen(3001, () => {
     console.log("Listening to requests on port 3001");
 }) 
-app.use(express.static('public'));
 
 const io = socket(server);
 io.on('connection', function(socket){
