@@ -10,6 +10,7 @@ app.set('port', 4000);
 
 app.use((req, resp, next) => {
     resp.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
