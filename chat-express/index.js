@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const socket = require('socket.io')
 
 let usernames = new Map();
@@ -8,11 +9,11 @@ let speaker;
 const app = express();
 app.set('port', 4000);
 
-app.use((req, resp, next) => {
-    resp.header('Access-Control-Allow-Origin', 'http://speakeasy-react.s3-website.us-east-2.amazonaws.com/')
-    next();
-});
-const server = app.listen(4000, () => {
+// app.use((req, resp, next) => {
+//     resp.header('Access-Control-Allow-Origin', 'http://speakeasy-react.s3-website.us-east-2.amazonaws.com/')
+//     next();
+// });
+const server = app.listen(4000, cors(), () => {
     console.log("Listening to requests on port 4000");
 }) 
 app.use(express.static('public'));
