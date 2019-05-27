@@ -8,8 +8,8 @@ let speaker;
 const app = express();
 app.set('port', 3001);
 
-app.use((req, resp, next) => {
-    resp.header('Access-Control-Allow-Origin', '*');
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
