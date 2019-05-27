@@ -9,7 +9,7 @@ const app = express();
 app.set('port', 4000);
 
 app.use((req, resp, next) => {
-    resp.header('Access-Control-Allow-Origin', 'http://speakeasy-react.s3-website.us-east-2.amazonaws.com:3000/');
+    resp.header('Access-Control-Allow-Origin', '*');
     next();
 });
 
