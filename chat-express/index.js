@@ -7,6 +7,11 @@ let speaker;
 
 const app = express();
 app.set('port', 4000);
+
+app.use((req, resp, next) => {
+    resp.header('Access-Control-Allow-Origin', 'http://speakeasy-react.s3-website.us-east-2.amazonaws.com/')
+    next();
+});
 const server = app.listen(4000, () => {
     console.log("Listening to requests on port 4000");
 }) 
