@@ -14,6 +14,10 @@ app.use((req, resp, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.sendStatus(203);
+});
+
 const server = app.listen(4000, () => {
     console.log("Listening to requests on port 4000");
 }) 
