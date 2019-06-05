@@ -18,8 +18,8 @@ app.set('port', 3001);
 app.use(cors());
 app.options('*', cors());
 
-app.get('/', (req, res) => {
-    res.sendStatus(203);
+app.get('/test', (req, res) => {
+    res.json({msg: 'This is CORS-enabled for all origins!'})
 });
 
 app.use(express.static('public'));
