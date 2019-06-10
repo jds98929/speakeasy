@@ -7,6 +7,7 @@ let connectCount = 0;
 let speaker;
 
 const app = express();
+app.set('port', 3001);
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -23,8 +24,7 @@ app.get('/test', (req, res) => {
 
 app.use(express.static('public'));
 
-var server = require( "http" ).createServer( app );
-server.listen(3001, () => {
+const server = app.listen(3001, () => {
     console.log("Listening to requests on port 3001");
 }) 
 
