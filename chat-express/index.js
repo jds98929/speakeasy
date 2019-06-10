@@ -24,8 +24,8 @@ app.get('/test', (req, res) => {
 
 app.use(express.static('public'));
 
-const server = app.listen(8080, () => {
-    console.log("Listening to requests on port 8080");
+const server = app.listen(3001, () => {
+    console.log("Listening to requests on port 3001");
 }) 
 
 const io = socket(server);
