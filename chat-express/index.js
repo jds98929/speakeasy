@@ -1,6 +1,6 @@
 const express = require('express');
 const socket = require('socket.io')
-const cors = require('cors');
+// const cors = require('cors');
 
 let usernames = new Map();
 let connectCount = 0;
@@ -9,14 +9,14 @@ let speaker;
 const app = express();
 app.set('port', 3001);
 
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
-app.use(cors());
-app.options('*', cors());
+// app.use(cors());
+// app.options('*', cors());
 
 app.get('/test', (req, res) => {
     res.json({msg: 'This is CORS-enabled for all origins!'})
