@@ -1,5 +1,5 @@
 const express = require('express');
-const socket = require('socket.io')
+const socket = require('socket.io')(server, { origins: '*:*'});
 // const cors = require('cors');
 
 let usernames = new Map();
